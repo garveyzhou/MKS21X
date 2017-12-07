@@ -14,8 +14,8 @@ public class Sorts{
 	ary[b] = c;
     }
     public static void SelectionSort(int [] ary){
-	while(!isSorted(ary)){
-	    int x = 0;
+	int x = 0;
+ 	while(){
 	    int min = ary[i];
 	    int temp = 0;
 	    for(int i = x; i < ary.length - 1; i++){
