@@ -29,7 +29,7 @@ public class Sorts{
 	ary[a] = ary[b];
 	ary[b] = c;
     }
-    public static void SelectionSort(int [] ary){
+    public static void selectionSort(int [] ary){
 	for(int x = 0 ; x < ary.length; x++){
 	    int min = ary[x];
 	    int temp = x;
@@ -42,7 +42,7 @@ public class Sorts{
 	    swap(ary,x,temp);
 	}
     }
-    public static void InsertionSort(int[] ary){
+    public static void insertionSort(int[] ary){
 	for(int i = 1; i < ary.length; i ++){
 	    int temp = ary[i];
 	    int index = i;
@@ -57,7 +57,7 @@ public class Sorts{
 	    ary[i] = (int)(Math.random()*100);
 	}
 	System.out.println(Arrays.toString(ary));
-	InsertionSort(ary);
+	insertionSort(ary);
 	System.out.println(Arrays.toString(ary));
     }
 }
