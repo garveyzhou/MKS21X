@@ -51,13 +51,32 @@ public class Sorts{
 	    }
 	}
     }
+    public static void bubbleSort(int[] ary){
+	boolean NOswap = false;
+	int end = ary.length;
+	while(!NOswap){
+	    int swapcount = 0;
+	    for (int x = 0; x < end-1;x++){
+		if(ary[x] > ary[x+1]){
+		    swap(ary,x,x+1);
+		    NOswap = false;
+		    swapcount += 1;
+		}
+	    }
+	    if( swapcount == 0){
+		NOswap = true;
+	    }
+	    end --;
+	}
+    }
+	    
     public static void main(String[] args){
 	int[] ary = new int[10];
 	for (int i = 0; i < ary.length; i++){
 	    ary[i] = (int)(Math.random()*100);
 	}
 	System.out.println(Arrays.toString(ary));
-	insertionSort(ary);
+	bubbleSort(ary);
 	System.out.println(Arrays.toString(ary));
     }
 }
