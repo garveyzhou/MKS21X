@@ -1,14 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-public class Temp extends JFrame implements ActionListener{
+public class TemperatureConverter extends JFrame implements ActionListener{
     private Container pane;
     private JTextField t;
     private JCheckBox c;
     
     public void actionPerformed(ActionEvent e){
     }
-    public Temp(){
+    public TemperatureConverter(){
 	this.setTitle("Temperature converter");
 	this.setSize(600,400);
 	this.setLocation(100,100);
