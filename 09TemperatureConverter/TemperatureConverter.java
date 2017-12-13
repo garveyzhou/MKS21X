@@ -15,7 +15,7 @@ public class TemperatureConverter extends JFrame implements ActionListener{
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	pane = this.getContentPane();
 	pane.setLayout(new FlowLayout());
-	t = new JTextField();
+	t = new JTextField(10);
 	c = new JCheckBox("Celius to Farenheight");
 	pane.add(t);
 	pane.add(c);
@@ -27,7 +27,7 @@ public class TemperatureConverter extends JFrame implements ActionListener{
 	return (Far - 32.0)*5.0/9.0;
     }
     public static void main (String[] args){
-	System.out.println(CtoF(100));
-	System.out.println(FtoC(212));
+	TemperatureConverter a = new TemperatureConverter();
+	a.setVisible(true);
     }
 }
