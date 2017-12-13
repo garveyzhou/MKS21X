@@ -10,7 +10,7 @@ public class ReferenceBook extends LibraryBook{
     public void setCollection(){
 	this.collection = collection;
     }
-    public void checkout(){
+    public void checkout(String patron,String dueDate){
 	System.out.println("cannot check out a reference book");
     }
     public void returned(){
