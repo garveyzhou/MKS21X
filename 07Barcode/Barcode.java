@@ -16,21 +16,18 @@ public class Barcode implements Comparable<Barcode>{
     public String getZip(){
 	return zip;
     }
-    public String getBar(){
-	return toBar(zip);
+    public String toString(){
+	return toCode(zip)+" "+zip;
     }
     public int compareTo(Barcode a){
 	return this.zip.compareTo(a.zip);
     }
 	
-    public boolean equals(Barcode a){
-	return this.equals(a);
-    }
     private static String convert(char x){
 	String[] s = {"||:::", ":::||", "::|:|", "::||:", ":|::|", ":|:|:", ":||::", "|:::|", "|::|:", "|:|::"};
 	return s[Character.getNumericValue(x)];
     }
-    public static String toBar(String z){
+    public static String toCode(String z){
 	if (z.length() < 5 || z.length() >5){
 	    throw new IllegalArgumentException();
 	}
@@ -69,6 +66,16 @@ public class Barcode implements Comparable<Barcode>{
 	}
 	else{throw new IllegalArgumentException();}
 	return z;
+    }
+    public static void main(String[] args){
+	
+	//Barcode e = new Barcode("asdfd"); //Contains non-barcode characters, should throw IllegalArgumentException
+	//	Barcode f = new Barcode("1234"); //Invalid length, should throw IllegalArgumentException
+
+	System.out.println(Barcode.toCode("00294")); // |||:::||:::::|:||:|:::|::|:|:|:|
+	//System.out.println(Barcode.toCode("asdfd")); //Contains non-barcode characters, should throw IllegalArgumentException
+	//System.out.println(Barcode.toCode("1234")); //Invalid length, should throw IllegalArgumentException
+
     }
 }
 			   
