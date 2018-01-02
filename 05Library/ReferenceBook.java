@@ -7,7 +7,7 @@ public class ReferenceBook extends LibraryBook{
     public String getCollection(){
 	return collection;
     }
-    public void setCollection(){
+    public void setCollection(String collection){
 	this.collection = collection;
     }
     public void checkout(String patron,String dueDate){
