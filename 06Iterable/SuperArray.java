@@ -1,4 +1,4 @@
-import java.util.Iteratir;
+import java.util.Iterator;
 
 public class SuperArray implements Iterable<String>{
     private int size;
@@ -119,4 +119,5 @@ public class SuperArray implements Iterable<String>{
 	return false;}
     public Iterator<String> iterator(){
 	return new SuperArrayIterator(this,0);
+}
 }
