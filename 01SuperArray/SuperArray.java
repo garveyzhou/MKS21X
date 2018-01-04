@@ -37,6 +37,9 @@ public class SuperArray{
 	return res += "]";
     }
     public String get(int index){
+	if(index < 0 || index > size()){
+	    throw new IndexOutOfBoundsException();
+	}
 	return data[index];
     }
     public String set(int index,String element){
@@ -84,19 +87,22 @@ public class SuperArray{
     public void add(int index, String element){
 	int x  = size();
 	if ( index < 0 || index > x){
-	    System.out.println("Error");
+	    throw new IndexOutOfBoundsException();
 	}
 	else{
-	    while(x != index){
+	    if(size == data.length){
+		resize();
+	    }
+	    while(x >index){
 		data[x] = data[x-1];
-		x -= 1;
+		x--;
 	    }
 	    data[x] = element;
 	    size += 1;
 	}
     }
     public String remove(int x){
-	//if (x > data.length ||  x < 0){
+	//if (x > size() ||  x < 0){
 	//throw new IndexOutofBoundsException();
 	//}
 	String removed = "";
