@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class SuperArray{
     private int size;
     private String[] data;
@@ -36,6 +37,9 @@ public class SuperArray{
 	return res += "]";
     }
     public String get(int index){
+	if(index < 0 || index > size()){
+	    throw new IndexOutOfBoundsException();
+	}
 	return data[index];
     }
     public String set(int index,String element){
@@ -81,21 +85,24 @@ public class SuperArray{
 	return -1;
     }
     public void add(int index, String element){
-	int x  = size;
-	//	if (size >=  data.length){
-	//throw new IndexOutofBoundsExeception();
-	//}
-	//	else{
-	    while(x != index){
+	int x  = size();
+	if ( index < 0 || index > x){
+	    throw new IndexOutOfBoundsException();
+	}
+	else{
+	    if(size == data.length){
+		resize();
+	    }
+	    while(x >index){
 		data[x] = data[x-1];
-		x -= 1;
+		x--;
 	    }
 	    data[x] = element;
 	    size += 1;
-	    //	}
+	}
     }
     public String remove(int x){
-	//if (x > data.length ||  x < 0){
+	//if (x > size() ||  x < 0){
 	//throw new IndexOutofBoundsException();
 	//}
 	String removed = "";
@@ -117,6 +124,3 @@ public class SuperArray{
 	    return true;
 	}
 	return false;}
-}
-
-    
